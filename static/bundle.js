@@ -24,7 +24,7 @@ webpackJsonp([1],[
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _store = __webpack_require__(367);
+	var _store = __webpack_require__(370);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -327,11 +327,11 @@ webpackJsonp([1],[
 
 	var _MainSection2 = _interopRequireDefault(_MainSection);
 
-	var _headlines = __webpack_require__(352);
+	var _headlines = __webpack_require__(355);
 
 	var HeadlineActions = _interopRequireWildcard(_headlines);
 
-	var _style = __webpack_require__(365);
+	var _style = __webpack_require__(368);
 
 	var _style2 = _interopRequireDefault(_style);
 
@@ -816,6 +816,10 @@ webpackJsonp([1],[
 
 	var _Headline2 = _interopRequireDefault(_Headline);
 
+	var _TweetShare = __webpack_require__(352);
+
+	var _TweetShare2 = _interopRequireDefault(_TweetShare);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var MainSection = function (_Component) {
@@ -843,17 +847,22 @@ webpackJsonp([1],[
 	        value: function render() {
 	            var _this2 = this;
 
+	            var headline = this.props.headlines.headline;
 	            return _react2.default.createElement(
 	                'section',
 	                { className: _style2.default.main },
-	                _react2.default.createElement(_Headline2.default, { headline: this.props.headlines.headline }),
+	                _react2.default.createElement(_Headline2.default, { headline: headline }),
 	                _react2.default.createElement(
 	                    'button',
-	                    { className: _style2.default.button, onClick: function onClick() {
+	                    {
+	                        className: _style2.default.button,
+	                        onClick: function onClick() {
 	                            return _this2.getRandom();
-	                        } },
+	                        }
+	                    },
 	                    'Another headline please bob'
-	                )
+	                ),
+	                _react2.default.createElement(_TweetShare2.default, { tweet: headline })
 	            );
 	        }
 	    }]);
@@ -862,7 +871,8 @@ webpackJsonp([1],[
 
 	MainSection.propTypes = {
 	    headlines: _react.PropTypes.object.isRequired,
-	    actions: _react.PropTypes.object.isRequired
+	    actions: _react.PropTypes.object.isRequired,
+	    headlineClass: _react.PropTypes.string
 	};
 
 	exports.default = MainSection;
@@ -2472,7 +2482,7 @@ webpackJsonp([1],[
 	};
 
 	Headline.propTypes = {
-	  headline: _react.PropTypes.string.required
+	  headline: _react.PropTypes.string
 	};
 
 	exports.default = Headline;
@@ -2530,18 +2540,114 @@ webpackJsonp([1],[
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(3);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _style = __webpack_require__(353);
+
+	var _style2 = _interopRequireDefault(_style);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var TweetShare = function TweetShare(_ref) {
+	    var tweet = _ref.tweet;
+
+	    var extendedTweet = void 0;
+	    if ((tweet + ' - Brexit Headline Generator - https://goo.gl/K7Hdw4').length < 140) {
+	        extendedTweet = tweet + ' - Brexit Headline Generator - https://goo.gl/K7Hdw4';
+	    } else if ((tweet + ' - Brexit Headline Generator').length < 140) {
+	        extendedTweet = tweet + ' - Brexit Headline Generator';
+	    } else {
+	        extendedTweet = tweet;
+	    }
+
+	    return _react2.default.createElement(
+	        'a',
+	        {
+	            className: '' + _style2.default.tweet,
+	            href: 'https://twitter.com/intent/tweet?text=' + encodeURI(extendedTweet),
+	            target: '_blank'
+	        },
+	        _react2.default.createElement('i', { className: 'fa fa-twitter' }),
+	        ' Tweet'
+	    );
+	};
+
+	TweetShare.propTypes = {
+	    tweet: _react.PropTypes.string
+	};
+
+	exports.default = TweetShare;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 353 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(354);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(258)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../node_modules/postcss-loader/index.js!./style.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./../../../node_modules/postcss-loader/index.js!./style.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 354 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(257)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".style__tweet___MOfcj {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    padding: 10px;\n    font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;\n    text-decoration: none;\n    background-color: #4099FF;\n    color: #FFF;\n    border-radius: 5px;\n}\n\n.style__tweet___MOfcj:active {\n    background-color: #2e6db3;\n}\n", "", {"version":3,"sources":["/./components/TweetShare/style.css"],"names":[],"mappings":"AAAA;IACI,mBAAmB;IACnB,UAAU;IACV,QAAQ;IACR,cAAc;IACd,0DAA0D;IAC1D,sBAAsB;IACtB,0BAA0B;IAC1B,YAAY;IACZ,mBAAmB;CACtB;;AAED;IACI,0BAA0B;CAC7B","file":"style.css","sourcesContent":[".tweet {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    padding: 10px;\n    font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;\n    text-decoration: none;\n    background-color: #4099FF;\n    color: #FFF;\n    border-radius: 5px;\n}\n\n.tweet:active {\n    background-color: #2e6db3;\n}\n"],"sourceRoot":"webpack://"}]);
+
+	// exports
+	exports.locals = {
+		"tweet": "style__tweet___MOfcj"
+	};
+
+/***/ },
+/* 355 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	exports.getRandomHeadline = undefined;
 
-	var _reduxActions = __webpack_require__(353);
+	var _reduxActions = __webpack_require__(356);
 
 	var getRandomHeadline = exports.getRandomHeadline = (0, _reduxActions.createAction)('get random headline');
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "headlines.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 353 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2550,15 +2656,15 @@ webpackJsonp([1],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _createAction = __webpack_require__(354);
+	var _createAction = __webpack_require__(357);
 
 	var _createAction2 = _interopRequireDefault(_createAction);
 
-	var _handleAction = __webpack_require__(355);
+	var _handleAction = __webpack_require__(358);
 
 	var _handleAction2 = _interopRequireDefault(_handleAction);
 
-	var _handleActions = __webpack_require__(362);
+	var _handleActions = __webpack_require__(365);
 
 	var _handleActions2 = _interopRequireDefault(_handleActions);
 
@@ -2567,7 +2673,7 @@ webpackJsonp([1],[
 	exports.handleActions = _handleActions2['default'];
 
 /***/ },
-/* 354 */
+/* 357 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2607,7 +2713,7 @@ webpackJsonp([1],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 355 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2615,7 +2721,7 @@ webpackJsonp([1],[
 	exports.__esModule = true;
 	exports['default'] = handleAction;
 
-	var _fluxStandardAction = __webpack_require__(356);
+	var _fluxStandardAction = __webpack_require__(359);
 
 	function isFunction(val) {
 	  return typeof val === 'function';
@@ -2643,7 +2749,7 @@ webpackJsonp([1],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 356 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2654,7 +2760,7 @@ webpackJsonp([1],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _lodashIsplainobject = __webpack_require__(357);
+	var _lodashIsplainobject = __webpack_require__(360);
 
 	var _lodashIsplainobject2 = _interopRequireDefault(_lodashIsplainobject);
 
@@ -2673,7 +2779,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 357 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -2684,9 +2790,9 @@ webpackJsonp([1],[
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseFor = __webpack_require__(358),
-	    isArguments = __webpack_require__(359),
-	    keysIn = __webpack_require__(360);
+	var baseFor = __webpack_require__(361),
+	    isArguments = __webpack_require__(362),
+	    keysIn = __webpack_require__(363);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -2782,7 +2888,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 358 */
+/* 361 */
 /***/ function(module, exports) {
 
 	/**
@@ -2836,7 +2942,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 359 */
+/* 362 */
 /***/ function(module, exports) {
 
 	/**
@@ -3085,7 +3191,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 360 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3096,8 +3202,8 @@ webpackJsonp([1],[
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var isArguments = __webpack_require__(359),
-	    isArray = __webpack_require__(361);
+	var isArguments = __webpack_require__(362),
+	    isArray = __webpack_require__(364);
 
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -3223,7 +3329,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 361 */
+/* 364 */
 /***/ function(module, exports) {
 
 	/**
@@ -3409,7 +3515,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 362 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3419,15 +3525,15 @@ webpackJsonp([1],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _handleAction = __webpack_require__(355);
+	var _handleAction = __webpack_require__(358);
 
 	var _handleAction2 = _interopRequireDefault(_handleAction);
 
-	var _ownKeys = __webpack_require__(363);
+	var _ownKeys = __webpack_require__(366);
 
 	var _ownKeys2 = _interopRequireDefault(_ownKeys);
 
-	var _reduceReducers = __webpack_require__(364);
+	var _reduceReducers = __webpack_require__(367);
 
 	var _reduceReducers2 = _interopRequireDefault(_reduceReducers);
 
@@ -3445,7 +3551,7 @@ webpackJsonp([1],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 363 */
+/* 366 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3470,7 +3576,7 @@ webpackJsonp([1],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 364 */
+/* 367 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3493,13 +3599,13 @@ webpackJsonp([1],[
 	module.exports = exports["default"];
 
 /***/ },
-/* 365 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(366);
+	var content = __webpack_require__(369);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(258)(content, {});
@@ -3519,7 +3625,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 366 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(257)();
@@ -3535,7 +3641,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 367 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -3549,9 +3655,9 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(103);
 
-	var _middleware = __webpack_require__(368);
+	var _middleware = __webpack_require__(371);
 
-	var _reducers = __webpack_require__(370);
+	var _reducers = __webpack_require__(373);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -3577,7 +3683,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 368 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -3589,7 +3695,7 @@ webpackJsonp([1],[
 	});
 	exports.logger = undefined;
 
-	var _logger = __webpack_require__(369);
+	var _logger = __webpack_require__(372);
 
 	var _logger2 = _interopRequireDefault(_logger);
 
@@ -3600,7 +3706,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 369 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -3623,7 +3729,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "logger.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 370 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -3638,7 +3744,7 @@ webpackJsonp([1],[
 
 	var _redux = __webpack_require__(103);
 
-	var _headlines = __webpack_require__(371);
+	var _headlines = __webpack_require__(374);
 
 	var _headlines2 = _interopRequireDefault(_headlines);
 
@@ -3652,7 +3758,7 @@ webpackJsonp([1],[
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 371 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -3663,26 +3769,13 @@ webpackJsonp([1],[
 	    value: true
 	});
 
-	var _reduxActions = __webpack_require__(353);
+	var _reduxActions = __webpack_require__(356);
+
+	var _seedData = __webpack_require__(375);
 
 	var initialState = {
 	    headline: null,
-	    headlines: [{
-	        start: 'Brexit causes ',
-	        endings: ['man\'s hat to fall off', 'a skunk to mate with a squirrel', 'NHS to employ AI bots to clean toilets', 'falafel shop to start selling sausage rolls', 'Boris to change his name to Norris', 'Nigel Farage to get face transplant with a worm', 'David Cameron to say "Fuck it all, I\'m moving to Spain"', '8 years of rain', 'carnage as people riot over depleted stocks of parmesan', 'cancer', 'value of english crumpets to plummet']
-	    }, {
-	        start: 'Boris Johnson ',
-	        endings: ['changes name to Norris', 'caught in Trump wig-swap scandal', 'gets penis caught in zipper during public address', 'banned from Europe', 'performs another political U-turn to announce candidacy for Labour leader', 'admits Brexit was all just a joke that got out of hand', 'spotted in nightclub in Magaluf', 'was born a newt', 'punches the Queen', 'found in a wheely bin covered in kebab sauce']
-	    }, {
-	        start: 'Michael Gove ',
-	        endings: ['is a meat puppet', 'malfunctions in press conference', 'admits lacking carisma, style and opposable thumbs', 'sucks his thumb at night', 'is laboratory experiment gone wrong', 'admits finding Boris\' TAKE OVER UK plans and saves them for himself', 'is a selfless saviour offering himself up for PM', 'will miss his beloved dutch clogs when we leave the EU', 'once sold his gran on eBay']
-	    }, {
-	        start: 'Nigel Farage ',
-	        endings: ['quits UKIP to start German beer brewing', 'smashes the country to the ground then walks away', 'announces civil partnership with Norris (formerly Boris)', 'to start transitioning to become a female lizard', 'joins The Sun and chief editor after garden party talks']
-	    }, {
-	        start: 'UKIP ',
-	        endings: ['turn their focus to helping scotland achieve independence', 'pray to Saint Patrick to get rid of all the snakes slithering their way towards party leadership bids', 'turns out to be an elaborate social experiment']
-	    }]
+	    headlines: _seedData.seedData
 	};
 
 	function getRandomNumber(limit) {
@@ -3706,6 +3799,39 @@ webpackJsonp([1],[
 	}, initialState);
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "headlines.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 375 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var seedData = exports.seedData = [{
+	    start: 'Brexit causes ',
+	    endings: ['man\'s hat to fall off', 'a skunk to mate with a squirrel', 'NHS to employ AI bots to clean toilets', 'falafel shops to boom as people misunderstand the boundaries of Europe', 'Boris to change his name to Noris', 'Nigel Farage to get face transplant with a worm', '8 years of rain', 'carnage as people riot over depleted stocks of parmesan', 'cancer', 'value of english crumpets to plummet']
+	}, {
+	    start: 'Boris Johnson ',
+	    endings: ['changes name to Norris', 'caught in Trump wig-swap scandal', 'gets penis caught in zipper during public address', 'banned from Europe', 'performs another political U-turn to announce candidacy for Labour leader', 'admits Brexit was all just a joke that got out of hand', 'spotted in nightclub in Magaluf', 'was born a newt', 'punches the Queen over corgi/pomeranian spat', 'found in a wheely bin covered in kebab sauce', 'invited to garden party around a flaming bin under a bridge']
+	}, {
+	    start: 'Michael Gove ',
+	    endings: ['is a meat puppet', 'malfunctions in press conference', 'admits lacking carisma, style and opposable thumbs', 'sucks his thumb at night', 'is laboratory experiment gone wrong', 'admits finding "TOP SECRET: TAKE OVER UK" plans in Boris\'s office and saves them for himself', 'is a selfless saviour offering himself up for PM', 'will miss his beloved dutch clogs when he leaves the EU', 'once sold his gran on eBay', 'has had enough of experts']
+	}, {
+	    start: 'Nigel Farage ',
+	    endings: ['quits UKIP to start German beer brewing', 'smashes the country to the ground then walks away', 'announces civil partnership with Noris (formerly Boris)', 'starts transition to become a lizard', 'to spend holiday in sunny south of France', 'resigns as he\'s achieved "political ambition" of removing the UK from Earth', 'is a comedy character based on Mr Bean', 'does the politcal equivalent of doing a huge fart then leaving the room']
+	}, {
+	    start: 'UKIP ',
+	    endings: ['turn their focus to helping scotland achieve independence', 'pray to Saint Patrick to get rid of all the snakes slithering towards party leadership bids', 'turns out to be an elaborate social experiment', 'in danger as no one wants to become next party leader']
+	}, {
+	    start: 'David Cameron ',
+	    endings: ['seen on the Thames steadying a ship', 'heard saying "Fuck it all, I\'m moving to Spain"']
+	}];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/Madole/Sandbox/FRONTEND/brexit-headline-generator/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }
 ]);
