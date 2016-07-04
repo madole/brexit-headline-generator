@@ -10,7 +10,7 @@ const initialState = {
                 'a skunk to mate with a squirrel',
                 'NHS to employ AI bots to clean toilets',
                 'falafel shop to start selling sausage rolls',
-                'Borris to change his name to Norris',
+                'Boris to change his name to Norris',
                 'Nigel Farage to get face transplant with a worm',
                 'David Cameron to say "Fuck it all, I\'m moving to Spain"',
                 '8 years of rain',
@@ -20,7 +20,7 @@ const initialState = {
             ]
         },
         {
-            start: 'Borris Johnson ',
+            start: 'Boris Johnson ',
             endings: [
                 'changes name to Norris',
                 'caught in Trump wig-swap scandal',
@@ -41,17 +41,17 @@ const initialState = {
                 'admits lacking carisma, style and opposable thumbs',
                 'sucks his thumb at night',
                 'is laboratory experiment gone wrong',
-                'admits finding Borris\' TAKE OVER UK plans and saves them for himself',
+                'admits finding Boris\' TAKE OVER UK plans and saves them for himself',
                 'is a selfless saviour offering himself up for PM',
                 'will miss his beloved dutch clogs when we leave the EU',
                 'once sold his gran on eBay'
             ]
         }, {
-            start: 'Nigel Farage',
+            start: 'Nigel Farage ',
             endings: [
                 'quits UKIP to start German beer brewing',
                 'smashes the country to the ground then walks away',
-                'announces civil partnership with Norris (formerly Borris)',
+                'announces civil partnership with Norris (formerly Boris)',
                 'to start transitioning to become a female lizard',
                 'joins The Sun and chief editor after garden party talks'
             ]
