@@ -46,6 +46,15 @@ const initialState = {
                 'will miss his beloved dutch clogs when we leave the EU',
                 'once sold his gran on eBay'
             ]
+        }, {
+            start: 'Nigel Farage',
+            endings: [
+                'quits UKIP to start German beer brewing',
+                'smashes the country to the ground then walks away',
+                'announces civil partnership with Norris(formerly Borris)',
+                'to start transitioning to become a female',
+                'joins The Sun and chief editor after garden party talks'
+            ]
         }
     ]
 };
