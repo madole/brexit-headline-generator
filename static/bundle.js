@@ -39,7 +39,7 @@ webpackJsonp([1],[
 	  _react2.default.createElement(
 	    _reactRouter.Router,
 	    { history: history },
-	    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _App2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: '/brexit-headline-generator', component: _App2.default })
 	  )
 	), document.getElementById('root'));
 
@@ -1059,7 +1059,7 @@ webpackJsonp([1],[
 	$export.B = 16;  // bind
 	$export.W = 32;  // wrap
 	$export.U = 64;  // safe
-	$export.R = 128; // real proto method for `library` 
+	$export.R = 128; // real proto method for `library`
 	module.exports = $export;
 
 /***/ },
@@ -2268,7 +2268,7 @@ webpackJsonp([1],[
 /* 336 */
 /***/ function(module, exports) {
 
-	
+
 
 /***/ },
 /* 337 */
