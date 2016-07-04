@@ -1,4 +1,7 @@
-.text {
-    font-size: 40px;
-    color: red;
+.image {
+    width: 600px;
+}
+
+.header {
+    text-align: center;
 }

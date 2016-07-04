@@ -1,15 +1,24 @@
 
 .main {
-  position: relative;
-  z-index: 2;
-  border-top: 1px solid #e6e6e6;
+    height: 300px;
+    width: 600px;
+    margin: 50px auto 0 auto;
+    position: relative
 }
 
 .button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     height: 40px;
     padding: 10px;
     background-color: #CCC;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+}
+
+.button:active {
+    background-color: #777;
+    color: #ccc;
 }

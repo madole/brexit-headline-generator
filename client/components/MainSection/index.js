@@ -2,8 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import style from './style.css';
 import Headline from '../Headline';
 
-
 class MainSection extends Component {
+    componentDidMount() {
+        this.getRandom();
+    }
+
     getRandom() {
         const { getRandomHeadline } = this.props.actions;
         getRandomHeadline();
@@ -13,7 +16,7 @@ class MainSection extends Component {
         return (
           <section className={style.main}>
             <Headline headline={this.props.headlines.headline} />
-            <button className={style.button} onClick={() => this.getRandom()}>Random</button>
+            <button className={style.button} onClick={() => this.getRandom()}>Another headline please bob</button>
           </section>
         );
     }

@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './style.css';
-
+import headerImage from '../../images/Brexitheader.png';
 const Header = () => (
-  <header>
-    <h1 className={styles.text}>Headline Generator</h1>
+  <header className={styles.header}>
+    <img className={styles.image} src={headerImage} alt="Brexit Headline Generator" />
   </header>
 );
 

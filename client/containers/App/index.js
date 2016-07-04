@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 import Header from '../../components/Header';
 import MainSection from '../../components/MainSection';
 import * as HeadlineActions from '../../actions/headlines';
-import style from './style.css';
+import styles from './style.css';
 
 const App = () => ({
     render() {
         const { headlines, actions } = this.props;
         return (
-          <div className={style.normal}>
-            <Header />
+          <div className={styles.container}>
+            <Header className={styles.header} />
             <MainSection headlines={headlines} actions={actions} />
           </div>
         );

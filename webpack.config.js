@@ -47,7 +47,10 @@ module.exports = {
           'react-hot',
           'babel-loader'
         ]
-      },
+    }, {
+        test: /.png$/,
+        loader: 'file-loader'
+    }
     ],
   },
   resolve: {

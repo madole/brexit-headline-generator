@@ -14,8 +14,9 @@ const initialState = {
                 'Nigel Farage to get face transplant with a worm',
                 'David Cameron to say "Fuck it all, I\'m moving to Spain"',
                 '8 years of rain',
-                'carnage as people riot over depleted stocks of Parmesan',
-                'cancer'
+                'carnage as people riot over depleted stocks of parmesan',
+                'cancer',
+                'value of english crumpets to plummet'
             ]
         },
         {
@@ -29,7 +30,21 @@ const initialState = {
                 'admits Brexit was all just a joke that got out of hand',
                 'spotted in nightclub in Magaluf',
                 'was born a newt',
-                'punches the Queen'
+                'punches the Queen',
+                'found in a wheely bin covered in kebab sauce'
+            ]
+        }, {
+            start: 'Michael Gove ',
+            endings: [
+                'is a meat puppet',
+                'malfunctions in press conference',
+                'admits lacking carisma, style and opposable thumbs',
+                'sucks his thumb at night',
+                'is laboratory experiment gone wrong',
+                'admits finding Borris\' TAKE OVER UK plans and saves them for himself',
+                'is a selfless saviour offering himself up for PM',
+                'will miss his beloved dutch clogs when we leave the EU',
+                'once sold his gran on eBay'
             ]
         }
     ]
