@@ -11,7 +11,7 @@ import configure from './store';
 const store = configure();
 const history = syncHistoryWithStore(browserHistory, store);
 
-const path = (process.NODE_ENV === 'production') ? '/brexit-headline-generator' : '/';
+const path = (process.env.NODE_ENV === 'production') ? '/brexit-headline-generator' : '/';
 
 ReactDOM.render(
   <Provider store={store}>
