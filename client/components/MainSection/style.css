@@ -1,0 +1,15 @@
+
+.main {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid #e6e6e6;
+}
+
+.button {
+    height: 40px;
+    padding: 10px;
+    background-color: #CCC;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
