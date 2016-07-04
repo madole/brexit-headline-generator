@@ -6,7 +6,7 @@ const Headline = ({ headline }) => (
 );
 
 Headline.propTypes = {
-    headline: PropTypes.string.required
+    headline: PropTypes.string
 };
 
 export default Headline;

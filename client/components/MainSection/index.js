@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import style from './style.css';
 import Headline from '../Headline';
+import TweetShare from '../TweetShare';
 
 class MainSection extends Component {
     componentDidMount() {
@@ -13,10 +14,17 @@ class MainSection extends Component {
     }
 
     render() {
+        const headline = this.props.headlines.headline;
         return (
           <section className={style.main}>
-            <Headline headline={this.props.headlines.headline} />
-            <button className={style.button} onClick={() => this.getRandom()}>Another headline please bob</button>
+            <Headline headline={headline} />
+            <button
+              className={style.button}
+              onClick={() => this.getRandom()}
+            >
+            Another headline please bob
+            </button>
+            <TweetShare tweet={headline} />
           </section>
         );
     }
@@ -24,7 +32,8 @@ class MainSection extends Component {
 
 MainSection.propTypes = {
     headlines: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired
+    actions: PropTypes.object.isRequired,
+    headlineClass: PropTypes.string
 };
 
 export default MainSection;

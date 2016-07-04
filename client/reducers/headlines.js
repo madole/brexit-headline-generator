@@ -9,7 +9,7 @@ const initialState = {
                 'man\'s hat to fall off',
                 'a skunk to mate with a squirrel',
                 'NHS to employ AI bots to clean toilets',
-                'falafel shop to start selling sausage rolls',
+                'falafel shops to boom as people misunderstand the boundaries of Europe',
                 'Boris to change his name to Norris',
                 'Nigel Farage to get face transplant with a worm',
                 'David Cameron to say "Fuck it all, I\'m moving to Spain"',
@@ -44,7 +44,8 @@ const initialState = {
                 'admits finding Boris\' TAKE OVER UK plans and saves them for himself',
                 'is a selfless saviour offering himself up for PM',
                 'will miss his beloved dutch clogs when we leave the EU',
-                'once sold his gran on eBay'
+                'once sold his gran on eBay',
+                'has had enough of experts'
             ]
         }, {
             start: 'Nigel Farage ',
@@ -53,14 +54,19 @@ const initialState = {
                 'smashes the country to the ground then walks away',
                 'announces civil partnership with Norris (formerly Boris)',
                 'to start transitioning to become a female lizard',
-                'joins The Sun and chief editor after garden party talks'
+                'to spend holiday in sunny south of France'
             ]
         }, {
             start: 'UKIP ',
             endings: [
                 'turn their focus to helping scotland achieve independence',
-                'pray to Saint Patrick to get rid of all the snakes slithering their way towards party leadership bids',
+                'pray to Saint Patrick to get rid of all the snakes slithering towards party leadership bids',
                 'turns out to be an elaborate social experiment'
+            ]
+        }, {
+            start: 'David Cameron ',
+            endings: [
+                'seen on the Thames steadying a ship'
             ]
         }
     ]

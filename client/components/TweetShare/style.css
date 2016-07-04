@@ -1,0 +1,15 @@
+.tweet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    background-color: #4099FF;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.tweet:active {
+    background-color: #2e6db3;
+}
