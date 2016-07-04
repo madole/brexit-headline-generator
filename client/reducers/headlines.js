@@ -51,9 +51,16 @@ const initialState = {
             endings: [
                 'quits UKIP to start German beer brewing',
                 'smashes the country to the ground then walks away',
-                'announces civil partnership with Norris(formerly Borris)',
-                'to start transitioning to become a female',
+                'announces civil partnership with Norris (formerly Borris)',
+                'to start transitioning to become a female lizard',
                 'joins The Sun and chief editor after garden party talks'
+            ]
+        }, {
+            start: 'UKIP ',
+            endings: [
+                'turn their focus to helping scotland achieve independence',
+                'pray to Saint Patrick to get rid of all the snakes slithering their way towards party leadership bids',
+                'turns out to be an elaborate social experiment'
             ]
         }
     ]

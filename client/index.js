@@ -11,10 +11,12 @@ import configure from './store';
 const store = configure();
 const history = syncHistoryWithStore(browserHistory, store);
 
+const path = (process.NODE_ENV === 'production') ? '/brexit-headline-generator' : '/';
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App} />
+      <Route path={path} component={App} />
     </Router>
   </Provider>,
   document.getElementById('root')
