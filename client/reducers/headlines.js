@@ -10,9 +10,8 @@ const initialState = {
                 'a skunk to mate with a squirrel',
                 'NHS to employ AI bots to clean toilets',
                 'falafel shops to boom as people misunderstand the boundaries of Europe',
-                'Boris to change his name to Norris',
+                'Boris to change his name to Noris',
                 'Nigel Farage to get face transplant with a worm',
-                'David Cameron to say "Fuck it all, I\'m moving to Spain"',
                 '8 years of rain',
                 'carnage as people riot over depleted stocks of parmesan',
                 'cancer',
@@ -30,8 +29,9 @@ const initialState = {
                 'admits Brexit was all just a joke that got out of hand',
                 'spotted in nightclub in Magaluf',
                 'was born a newt',
-                'punches the Queen',
-                'found in a wheely bin covered in kebab sauce'
+                'punches the Queen over corgi/pomeranian spat',
+                'found in a wheely bin covered in kebab sauce',
+                'invited to garden party around a flaming bin under a bridge'
             ]
         }, {
             start: 'Michael Gove ',
@@ -52,9 +52,11 @@ const initialState = {
             endings: [
                 'quits UKIP to start German beer brewing',
                 'smashes the country to the ground then walks away',
-                'announces civil partnership with Norris (formerly Boris)',
+                'announces civil partnership with Noris (formerly Boris)',
                 'to start transitioning to become a female lizard',
-                'to spend holiday in sunny south of France'
+                'to spend holiday in sunny south of France',
+                'resigns as he\'s achieved "political ambition" of removing the UK from Earth',
+                'is a comedy character based on Mr Bean'
             ]
         }, {
             start: 'UKIP ',
@@ -66,7 +68,8 @@ const initialState = {
         }, {
             start: 'David Cameron ',
             endings: [
-                'seen on the Thames steadying a ship'
+                'seen on the Thames steadying a ship',
+                'heard saying "Fuck it all, I\'m moving to Spain"'
             ]
         }
     ]
